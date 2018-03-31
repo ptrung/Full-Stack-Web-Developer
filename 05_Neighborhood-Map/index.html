@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Neighborhood Map Project" content="Map of Salzburg">
+    <title>Salzburg's Photospots</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="burger" onclick="toggleSidebar()">&#9776;</div>
+        <div class="headline">
+            <h1 class="heading">Salzburg's Photospots</h1>
+            <h2 class="subheading">powered by Flickr, Wikipedia and Google Maps</h2>
+        </div>
+    </header>
+    <!-- Sidebar for filtering items -->
+    <aside class="sidebar">
+        <input class="filter-input" type="text" data-bind="textInput: searchOption, valueUpdate: 'afterkeydown'" placeholder="Type to filter Locations...">
+        <ul class="location-list" data-bind="foreach: filteredLocations">
+            <li class="location-name" data-bind="text: title, click: $parent.selectMarker"></li>
+        </ul>
+    </aside>
+    <!-- Main -->
+    <main id="main">
+        <!-- Map -->
+        <div id="map" class="map"></div>
+        <!-- Information -->
+        <div class="information">            
+            <!-- Flickr Gallery -->
+            <section id="gallery" class="info-block">
+                <div class="flickr-gallery" data-bind="with: currentImage()">
+                    <a target="_tab" href="" data-bind="attr: {href: $data.sourceUrl}">
+                        <img class="flickr-image" src="" alt="" data-bind="attr: {src: $data.imgSrc}">
+                    </a>
+                    <div class="button-group">
+                        <button class="arrow-left-right" data-bind="click: $parent.prevImage">&#706;</button>
+                        <button class="arrow-left-right" data-bind="click: $parent.nextImage">&#707;</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Wiki Text -->
+            <section id="wiki" class="info-block">
+                <div class="wiki-text" data-bind="html: wikiInfo">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/knockout-3.4.2.js" charset="utf-8"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/markers.js" charset="utf-8"></script>
+    <script src="js/styles.js" charset="utf-8"></script>
+    <script src="js/interaction.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBRTschOElF6NRclmCZymKOoGb0jKlNtfU&callback=runApp"
+        onerror="googleError()"></script>
+</body>
+</html>

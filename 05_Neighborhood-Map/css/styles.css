@@ -1,0 +1,254 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+html, body {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.justify {
+    text-align: justify;
+}
+
+/* Header */
+.header {
+    padding-left: 10px;
+    height: 60px;
+    background-color: #222;
+    color: #ddd;
+    display: flex;
+}
+
+.headline {
+    display: inline;
+    width: calc(100vw - 50px);
+    margin: auto 0;
+}
+
+.heading {
+    display: block;
+    margin: 0;
+    font-size: 15px; 
+}
+
+.subheading {
+    display: block;
+    margin: auto 0;
+    font-size: 12px; 
+    font-weight: normal;
+}
+
+.burger {
+    font-size: 30px;
+    cursor: pointer;
+    margin: auto 10px;
+    width: 50px;
+    display: inline;
+}
+/* End Header */
+
+/* Sidebar */
+.filter-input {
+    width: calc(100% - 80px);
+    padding: 12px 20px;  
+    margin: 0 20px;
+    display: inline;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0s;
+    padding-top: 80px;
+}
+
+.location-list {
+    padding-left: 20px;
+    cursor: default;
+}
+
+.location-name {
+    padding: 5px 0;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.location-name:hover {
+    color: #f1f1f1;
+    cursor: pointer;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+}
+/* End Sidebar */
+
+/* Main */
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Map */
+.map {
+    height: calc(100vh - 60px);
+    width: 100vw;
+}
+
+.info-window {
+    text-align: center;
+}
+
+.anchor-link {
+    width: calc(100% - 10px);
+    max-height: 40px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    color: #eee;
+    font-size: 15px;
+    padding: 10px 0;
+    margin: 5px;
+    background: #757575;
+    text-decoration: none;
+    display: inline;
+}
+
+@media (min-width: 992px) {
+    .map {
+        height: calc(100vh - 60px);
+        width: 100vw;
+    }
+}
+/* End Map */
+
+/* Information */
+.information {
+    height: 200vh;
+    background-color: #222;
+    display: none;
+}
+
+.info-block {
+    margin: auto;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .information {
+        height: calc(100vh - 60px);
+    }
+
+    .info-block {
+        width: 300px;
+        height: calc(50vh - 30px);
+    }
+}
+
+/* Flickr Gallery */
+.flickr-gallery {
+    margin: auto;
+    width: 100vw;
+    text-align: center;
+}
+
+.flickr-image {
+    max-width: 100vw;
+    max-height: calc(100vh - 60px);
+}
+
+.button-group {
+    width: 100%;
+    text-align: center;
+}
+
+.arrow-left-right {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: #eee;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    background: #757575;
+    text-decoration: none;
+    border: none;
+    height: 50px;
+    display: inline;
+    width: 49%;
+}
+
+.arrow-left-right:hover, 
+.arrow-up-down:hover {
+  background: #c7c7c7;
+  text-decoration: none;
+}
+
+@media (min-width: 992px) {
+    .flickr-gallery {
+        margin: auto;
+        width: 300px;
+    }
+
+    .flickr-image {
+        max-width: calc(100% - 10px);
+        max-height: calc(50vh - 90px);
+    }
+}
+/* End Flickr Gallery */
+
+/* Wiki Text */
+.wiki-text {
+    width: 100vw;
+    padding: 50px;
+    text-align: center;
+    color: #ddd;
+    overflow-y: auto;
+}
+
+.wikiUrl {
+    width: 100%;
+    max-height: 50px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    color: #eee;
+    font-size: 15px;
+    padding: 10px 0;
+    background: #757575;
+    text-decoration: none;
+    display: inline;
+}
+
+@media (min-width: 992px) {
+    .wiki-text {
+        width: 300px;
+        height: calc(100% - 30px);
+        padding: 0 20px;
+    }
+}
+/* End Wiki Text */
+/* End Information */
+/* End Main */
